@@ -10,8 +10,7 @@ terraform {
     bucket         = "terrabucket0801"
     key            = "Env/dev/terraform.tfstate"
     region         = "us-east-1"
-    dynamodb_table = "terraform_infra"
-    encrypt        = true
+    
   }
 }
 
