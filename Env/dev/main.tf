@@ -1,4 +1,4 @@
-module "ec2_instance" {
+module "ec2" {
   source         = "../../modules/ec2"
 
   name           = "dev"
@@ -10,7 +10,7 @@ module "ec2_instance" {
 }
 
 
-module "aws_vpc" {
+module "vpc" {
   source      = "../../modules/vpc"
   env         = "dev"
 
