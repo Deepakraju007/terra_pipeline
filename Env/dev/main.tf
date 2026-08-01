@@ -2,10 +2,10 @@ module "ec2" {
   source         = "../../modules/ec2"
 
   name           = "dev"
-  ami            = "ami-02b64aa047cb5edf5" # Replace with your desired AMI ID
+  ami            = "ami-02b64aa047cb5edf5" 
   env            = "dev"
   instance_type  = "t3.micro"
-  instance_count = 1
+  instance_count = 2
   subnet_id      = module.aws_vpc.subnet_id
 }
 
