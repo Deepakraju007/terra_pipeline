@@ -1,15 +1,17 @@
 module "ec2_instance" {
-  source = "../../modules/ec2_instance"
+  source         = "../../modules/ec2"
 
-  instance_name = "dev"
-  ami_id        = "ami-02b64aa047cb5edf5" # Replace with your desired AMI ID
-  instance_type = "t2.micro"
-  
+  name           = "dev"
+  ami            = "ami-02b64aa047cb5edf5" # Replace with your desired AMI ID
+  env            = "dev"
+  instance_type  = "t3.micro"
+  instance_count = 1
+  subnet_id      = module.aws_vpc.subnet_id
 }
 
 
 module "aws_vpc" {
-  source      = "../../modules/aws_vpc"
+  source      = "../../modules/vpc"
   env         = "dev"
 
   cidr_block  = "10.0.0.0/16"   
