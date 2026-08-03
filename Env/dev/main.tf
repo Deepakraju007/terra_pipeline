@@ -5,7 +5,7 @@ module "ec2" {
   ami            = "ami-02b64aa047cb5edf5" # Replace with your desired AMI ID
   env            = "dev"
   instance_type  = "t3.micro"
-  instance_count = 2
+  instance_count = 3
   subnet_id      = module.vpc.subnet_id
 }
 
