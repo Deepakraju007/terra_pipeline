@@ -3,7 +3,7 @@ pipeline {
 
   environment {
     ENV = "${env.BRANCH_NAME}"
-    TF_WORKDIR = "Env/${env.BRANCH_NAME}"
+    TF_WORKDIR = "env/${env.BRANCH_NAME}"
   }
 
   stages {
@@ -16,7 +16,7 @@ pipeline {
     stage('Terraform Init') {
       steps {
         dir("${TF_WORKDIR}") {
-          sh 'terraform init -reconfigure'
+          sh 'terraform init'
         }
       }
     }
