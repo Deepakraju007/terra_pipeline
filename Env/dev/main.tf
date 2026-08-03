@@ -1,3 +1,4 @@
+/*
 module "ec2" {
   source         = "../../modules/ec2"
 
@@ -18,3 +19,4 @@ module "vpc" {
   subnet_cidr_block = "10.0.1.0/24"
   subnet_availability_zone = "${var.aws_region}a"
 }
+*/
