@@ -9,7 +9,6 @@ terraform {
     bucket = "siva-kops-state-07-07-2026"
     key    = "env/dev/terraform.tfstate"
     region = "us-east-1"
-    dynamodb_table = "terraform_infra"
   }
 }
 
