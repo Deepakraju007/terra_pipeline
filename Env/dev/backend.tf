@@ -6,7 +6,7 @@ terraform {
     }
   }
   backend "s3" {
-    bucket = "terrabucket0801 "
+    bucket = "terrabucket0801"
     key    = "Env/dev/terraform.tfstate"
     region = "us-east-1"
     dynamodb_table = "terraform_infra"
