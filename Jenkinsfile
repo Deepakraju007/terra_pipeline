@@ -12,15 +12,17 @@ pipeline {
         git branch: "${env.BRANCH_NAME}", url: 'https://github.com/Deepakraju007/terra_pipeline.git'
       }
     }
-
-    stage('Terraform Init') {
-      steps {
-        dir("${TF_WORKDIR}") {
-          sh 'terraform init'
-        }
-      }
+stage('Terraform Init') {
+  steps {
+    dir("${TF_WORKDIR}") {
+      sh '''
+        rm -rf .terraform
+        rm -f .terraform.lock.hcl
+        terraform init -reconfigure
+      '''
     }
-
+  }
+}
     stage('Terraform Plan') {
       steps {
         dir("${TF_WORKDIR}") {
