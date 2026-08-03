@@ -13,7 +13,7 @@ module "ec2" {
 
   instance_count = 1
   name           = "qa-ec2"
-  instance_type  = "t2.micro"
+  instance_type  = "t3.micro"
   ami            = "ami-02b64aa047cb5edf5" # Example AMI ID for Amazon Linux 2
   subnet_id      = module.vpc.subnet_id
 }
